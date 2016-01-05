@@ -124,27 +124,23 @@ php_fpm_PID=/var/run/php-fpm.pid
 
 ## 安装MySQL
 
-下载选择 community - source code - Generic Linux
-```
-wget -c http://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.10.tar.gz
-```
-
-boost库
+先要编译 boost 库
 ```
 apt-get install python-dev gccxml libbz2-dev
-wget -c http://downloads.sourceforge.net/project/boost/boost/1.60.0/boost_1_60_0.tar.gz
-tar -zvxf boost_1_60_0.tar.gz
-cd boost_1_60_0/
+wget -c http://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.gz
+tar -zvxf boost_1_59_0.tar.gz
+cd boost_1_59_0/
 ./bootstrap.sh
 ./bjam --prefix==./prefix/install
 ./b2 install
 ```
 
+下载选择 community - source code - Generic Linux
 ```
-apt-get install cmake bison libncurses5-dev
-```
+wget -c http://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.10.tar.gz
 
-```
+apt-get install cmake bison libncurses5-dev
+
 cmake \
 -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
 -DMYSQL_DATADIR=/usr/local/mysql/data \
