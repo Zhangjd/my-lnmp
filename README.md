@@ -1,6 +1,6 @@
 # My-LNMP
 
-个人lnmp配置
+个人在阿里云上面的lnmp配置
 
 ## 软件版本
 
@@ -135,6 +135,18 @@ cd boost_1_59_0/
 ./b2 install
 ```
 
+提示 virtual memory exhausted: Cannot allocate memory 解决
+```
+mkdir /opt/images/
+rm -rf /opt/images/swap
+dd if=/dev/zero of=/opt/images/swap bs=1024 count=2048000  
+mkswap /opt/images/swap
+swapon /opt/images/swap
+
+swapoff swap
+rm -f /opt/images/swap
+```
+
 下载选择 community - source code - Generic Linux
 ```
 wget -c http://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.10.tar.gz
@@ -156,9 +168,12 @@ cmake \
 -DWITH_PARTITION_STORAGE_ENGINE=1 \
 -DEXTRA_CHARSETS=all \
 -DDEFAULT_CHARSET=utf8 \
--DDEFAULT_COLLATION=utf8_general_ci
+-DDEFAULT_COLLATION=utf8_general_ci \
+-DWITH_BOOST=<boost-dir>
 
-make && make install
+make -j4
+
+make install
 ```
 
 
