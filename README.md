@@ -78,7 +78,7 @@ make install
 
 #### 配置 php.ini
 ```
-cp <source-dir>/sapi/fpm/php.ini-development /usr/local/php/etc/php.ini
+cp <source-dir>/php.ini-development /usr/local/php/etc/php.ini
 ```
 
 #### 配置php-fpm.conf
