@@ -177,7 +177,7 @@ make -j4
 make install
 ```
 
-
+修改 php.ini 中mysql链接的 socket 位置为: /var/run/mysqld/mysqld.sock
 
 
 
