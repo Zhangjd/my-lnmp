@@ -120,6 +120,7 @@ php_fpm_BIN=/usr/local/php/sbin/php-fpm
 php_fpm_CONF=/usr/local/php/etc/php-fpm.conf
 php_fpm_PID=/var/run/php-fpm.pid
 ```
+关于PHP7的一些配置优化, 可以看鸟哥的文章 [让PHP7达到最高性能的几个Tips](http://www.laruence.com/2015/12/04/3086.html)
 
 
 ## 安装MySQL
